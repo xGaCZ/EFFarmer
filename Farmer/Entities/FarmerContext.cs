@@ -27,6 +27,8 @@ namespace Farmer.Entities
                 u.HasMany(g => g.Animals).WithOne(x => x.User).HasForeignKey(x=> x.UserId);
                 u.HasMany(g => g.Fields).WithOne(x => x.User).HasForeignKey(x=>x.UserId);
             });
+            modelBuilder.Entity<User>()
+                .HasData(new User() {Id=1, Name = "Darek", Cash = 500 },new User() { Id = 2, Name = "Adam", Cash = 1200 },new User() { Id = 3, Name = "Irek", Cash = 900 });
                        
         }
 
